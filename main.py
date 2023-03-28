@@ -3,10 +3,11 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+# from selenium.webdriver.common.by import By
 import time
 
 # 예약 사이트 URL
-url = ""
+url = "https://yeyak.seoul.go.kr/web/search/selectPageListDetailSearchImg.do?code=T100&dCode=T108"
 
 # 브라우저 옵션 설정
 options = webdriver.ChromeOptions()
@@ -18,8 +19,8 @@ driver = webdriver.Chrome(options=options)
 driver.get(url)
 
 # 로그인 정보 입력
-username = driver.find_element_by_name("username") # 로그인 아이디 입력란
-password = driver.find_element_by_name("password") # 로그인 비밀번호 입력란
+username = driver.find_element_by_name("me2me2kr") # 로그인 아이디 입력란
+password = driver.find_element_by_name("889488ss!!") # 로그인 비밀번호 입력란
 username.send_keys("your_username")
 password.send_keys("your_password")
 
@@ -28,7 +29,7 @@ login_button = driver.find_element_by_xpath("//button[contains(text(), '로그�
 login_button.click()
 
 # 예약 페이지로 이동
-driver.get("https://example.com/reservation")
+driver.get("https://yeyak.seoul.go.kr/web/reservation/selectReservView.do?rsv_svc_id=S230316105228647450&code=T100&dCode=T108&sch_order=1&sch_choose_list=&sch_type=&sch_text=&sch_recpt_begin_dt=&sch_recpt_end_dt=&sch_use_begin_dt=&sch_use_end_dt=&svc_prior=N&sch_reqst_value=")
 
 # 예약 일자 선택
 reservation_date = driver.find_element_by_name("date") # 예약 일자 선택란
