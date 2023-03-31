@@ -10,7 +10,7 @@ import subprocess
 
 
 # By. 모듈 테스트 로직
-# By.selectPeriod = (By.CSS_SELECTOR, '#selectPeriod')
+By.selectPeriod = (By.CSS_SELECTOR, '#selectPeriod')
 By.selectRsvTime = (By.CSS_SELECTOR, '#selectRsvTime')
 By.userId = (By.CSS_SELECTOR, '#userId')
 By.userPwd = (By.CSS_SELECTOR, '#userPwd')
@@ -41,7 +41,7 @@ driver.get(url)
 # 예약 가능한 날짜 선택
 # date_select = Select(driver.find_element(By.selectPeriod)) # 예약 날짜 선택 셀렉트 박스
 # date_select = Select(driver.find_element(By.XPATH, '//select[@id="selectPeriod"]')) # 예약 날짜 선택 셀렉트 박스
-date_select = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'selectPeriod')))
+date_select = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'selectPeriod'))) # 예약 날짜 선택 셀렉트 박스
 date_select.select_by_index(1) # 두번째(내일) 날짜 선택
 
 # 예약 가능한 시간 선택
@@ -81,4 +81,4 @@ except:
     print("예약에 실패하였습니다.")
 
 # 브라우저 닫기
-driver.close()
+# driver.close()
